@@ -11,7 +11,7 @@ async function run() {
   const duration = core.getInput('duration', { required: false });
   const repo = core.getInput('repo-name', { required: true });
   const path = core.getInput('settings-xml-path', { required: true });
-  
+
   const client = new codeArtifact.CodeartifactClient({ region: region });
   const authCommand = new codeArtifact.GetAuthorizationTokenCommand({
     domain: domain,
@@ -26,13 +26,13 @@ async function run() {
   }
 
   maven(domain, account, region, repo, authToken, path);
-  
+
   //core.setOutput('registry', `https://${domain}-${account}.d.codeartifact.${region}.amazonaws.com`);
   core.setSecret(authToken);
 }
 
 async function maven(domain, account, region, repo, authToken, path) {
-  
+
   await io.rmRF(path);
   fs.exists(path, function(exists) {
 
@@ -64,7 +64,13 @@ async function maven(domain, account, region, repo, authToken, path) {
                <id>${domain}-${repo}</id>
                <url>https://${domain}-${account}.d.codeartifact.${region}.amazonaws.com/maven/${repo}/</url>
             </repository>
-                </repositories>
+          </repositories>
+          <pluginRepositories>
+            <pluginRepository>
+               <id>${domain}-${repo}</id>
+               <url>https://${domain}-${account}.d.codeartifact.${region}.amazonaws.com/maven/${repo}/</url>
+            </pluginRepository>
+          </pluginRepositories>
       </profile>
    </profiles>
    <mirrors>
