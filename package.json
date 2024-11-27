@@ -1,5 +1,5 @@
 {
-  "name": "aws-codeartifact-mvn-login",
+  "name": "@humand/aws-codeartifact-mvn-login",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -21,12 +21,12 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lonewolfworks/aws-codeartifact-mvn-login.git"
+    "url": "git+https://github.com/HumandDev/aws-codeartifact-mvn-login.git"
   },
   "keywords": [],
   "author": "",
   "bugs": {
-    "url": "https://github.com/lonewolfworks/aws-codeartifact-mvn-login/issues"
+    "url": "https://github.com/HumandDev/aws-codeartifact-mvn-login/issues"
   },
-  "homepage": "https://github.com/lonewolfworks/aws-codeartifact-mvn-login#readme"
+  "homepage": "https://github.com/HumandDev/aws-codeartifact-mvn-login#readme"
 }
